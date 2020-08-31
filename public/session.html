@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DemoGyr</title>
+    <link rel="stylesheet" href="/stylesheets/session.css">
+</head>
+<body style="background-color: honeydew ; height: 98vh ;width: 98vw ;margin: 0" >
+<table>
+    <tr>
+        <th>x-axis</th>
+        <th>y-axis</th>
+        <th>z-axis</th>
+    </tr>
+    <tr>
+        <th id="xvalue"></th>
+        <th id="yvalue"></th>
+        <th id="zvalue"></th>
+    </tr>
+</table>
+<div id="app">
+    <div id="buttons">
+        <button id="readbatterylevel">Connect to Your Device</button>
+        <button id="reset">Reset Device</button>
+        <button id="showgyr" onclick="showgyroscope()">Gyroscope Charts</button>
+        <button id="showacc" onclick="showacc()">Accelerator Charts</button>
+        <p id="message">Press Scan For Devices to start your session</p>
+
+        <label for="gyr">Turn on Gyroscope</label>
+        <label class="switch">
+            <input type="checkbox" id="gyr" onclick="checkswitchesgyr()">
+            <span class="slider round"></span>
+        </label>
+        <label for="acc">Turn on Accelerometer</label>
+        <label class="switch">
+            <input type="checkbox" id="acc" onclick="checkswitchesacc()">
+            <span class="slider round"></span>
+        </label>
+        <label for="both">Turn on Both Gyroscope and Accelerometer</label>
+        <label class="switch">
+            <input type="checkbox" id="both" onclick="checkswitchesboth()">
+            <span class="slider round"></span>
+        </label>
+        <br>
+        <select id="gyrhz" style="margin-left: 1vw">
+            <option>25.0 Hz</option>
+            <option>50.0 Hz</option>
+            <option>100.0 Hz</option>
+            <option>200.0 Hz</option>
+        </select>
+        <select id="acchz" style="margin-left: 6vw">
+            <option>12.5 Hz</option>
+            <option>25.0 Hz</option>
+            <option>50.0 Hz</option>
+            <option>100.0 Hz</option>
+            <option>200.0 Hz</option>
+        </select>
+
+    </div>
+    <button id="logout" style="float: right">Log Out</button>
+<!--    <script>-->
+
+<!--        function showgyroscope(){-->
+<!--            if (document.getElementById("configure").style.display === 'none') {-->
+<!--                document.getElementById("configure").style.display = "block";-->
+<!--                document.getElementById("gyr_charts").style.display = "inline-block";-->
+<!--            } else {-->
+<!--                document.getElementById("configure").style.display = "none";-->
+<!--                document.getElementById("gyr_charts").style.display = "none";-->
+<!--            }-->
+
+<!--        }-->
+<!--    </script>-->
+<!--    <script>-->
+<!--        function showacc() {-->
+<!--            if (document.getElementById("configureacc").style.display === 'none'){-->
+<!--                document.getElementById("configureacc").style.display = "block";-->
+<!--                document.getElementById("acc_charts").style.display = "inline-block";-->
+<!--            }else{-->
+<!--                document.getElementById("configureacc").style.display = "none";-->
+<!--                document.getElementById("acc_charts").style.display = "none";-->
+
+<!--            }-->
+<!--        }-->
+<!--    </script>-->
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="not_start"></div>
+<!--    <button id="configure" style="display: none;">Start Gyroscope</button>-->
+<!--    <button id="configureacc" style="display: none;">Start Accelerometer</button>-->
+    <button id="configure" >Start Your Sensors</button>
+</div>
+
+<div class="chart-container" style="height:40vh; width:80vw;">
+    <div id="gyr_charts"  style="width: 50%; height: 50% ; display: inline-block">
+        <canvas id="myChartgyr"></canvas>
+        <canvas id="myChartgyrFixed"></canvas>
+    </div>
+    <div id="acc_charts"  style="width: 50%; height: 50% ; display: inline-block">
+        <canvas id="Chartacc"></canvas>
+        <canvas id="Chartaccfixed"></canvas>
+    </div>
+</div>
+
+
+</div>
+<br>
+<br>
+
+
+<script src="/javascripts/demogyracc.js"></script>
+
+</body>
+</html>

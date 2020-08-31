@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome To Web Bluetooth</title>
+    <h1> Welcome to Web Bluetooth</h1>
+    <link rel="stylesheet" href="/stylesheets/index.css">
+
+</head>
+<body>
+<div class="form-container">
+    <form class="form1" method="post" action="/register">
+        <label class="formlabels" for="firstname">First Name</label><br>
+        <input class="forminputs" type="text"  id="firstname" name="firstname" required><br>
+        <label class="formlabels" for="lastname">Last Name</label><br>
+        <input class="forminputs" type="text" id="lastname" name="lastname" required><br>
+        <label class="formlabels" for="email">Email</label><br>
+        <input class="forminputs" type="email" id="email" name="email" required><br>
+        <label class="formlabels" for="height">Height (cm)</label><br>
+        <input class="forminputs" type="number" id="height" name="height" required min="0"><br>
+        <label class="formlabels" for="weight">Weight (kg)</label><br>
+        <input class="forminputs" type="number" id="weight" name="weight" required min="0"><br>
+        <label class="formlabels" for="age">Age</label><br>
+        <input class="forminputs"  type="number" id="age" name="age" required min="0"><br>
+        <label class="formlabels" for="dominant_hand">Dominant Hand</label><br>
+        <select name="dominant_hand" id="dominant_hand" class="forminputs">
+            <option value="right">Right</option>
+            <option valu="left">Left</option>
+        </select><br>
+        <label class="formlabels" for="username">Username</label><br>
+        <input class="forminputs" type="text" id="username" name="username" required><br>
+        <label class="formlabels" for="pswd">Password</label><br>
+        <input class="forminputs" type="password"  id="pswd" name="pswd" required><br>
+        <button type="submit" style="font-size: x-large">Register</button>
+    </form>
+</div>
+</body>
+</html>
